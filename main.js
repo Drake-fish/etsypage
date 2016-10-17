@@ -1,10 +1,14 @@
+
+$('document').ready(function(e){
+  var searchValue="whisky";
+  search(searchValue);
+});
 var main = $('main');
 $('.searchButton').on('click', function(e) {
-    console.log(e);
+  main.html('');
     var searchValue = $('.searchBar').val();
-
-    console.log(search);
     search(searchValue);
+
 });
 
 function search(searchValue){
@@ -22,6 +26,8 @@ var setting = {
             console.log(price);
             div.append(image, name, shop, price);
             main.append(div);
+
+
         });
     },
 
@@ -31,6 +37,6 @@ var setting = {
     dataType: 'jsonp'
 };
 
-
 $.ajax(setting);
+
 }
